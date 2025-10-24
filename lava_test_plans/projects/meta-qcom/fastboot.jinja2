@@ -11,6 +11,7 @@
 {% set ROOTFS_URL = "downloads://" + ROOTFS_IMG_FILE + ".img" %}
 {% set ROOTFS_URL_COMP = null %}
 {% set target_deploy_timeout = 15 %}
+{% set use_download_headers = use_download_headers|default(false) %}
 
 {% block metadata %}
   source: https://github.com/Linaro/lava-test-plans.git
@@ -29,10 +30,14 @@
     to: downloads
     images:
       boot:
+{% if use_download_headers %}
         {% include PROJECT+"include/auth-header.jinja2" %}
+{% endif %}
         url: "{{ BUILD_DOWNLOAD_URL }}/{{ BUILD_OS }}/{{ BUILD_MACHINE }}/{{ BOOT_IMG_FILE }}"
       rootfs:
+{% if use_download_headers %}
         {% include PROJECT+"include/auth-header.jinja2" %}
+{% endif %}
         url: "{{ BUILD_DOWNLOAD_URL }}/{{ BUILD_OS }}/{{ BUILD_MACHINE }}/{{ ROOTFS_IMG_FILE }}.gz"
         compression: gz
     postprocess:

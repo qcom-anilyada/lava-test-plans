@@ -5,12 +5,12 @@
 {% set DOCKER_IMAGE_POSTPROCESS = DOCKER_IMAGE_POSTPROCESS|default("debian:buster") %}
 {% set IMAGE_FILE_NAME = IMAGE_FILE_NAME|default("rootfs.tar.gz") %}
 {% set apply_overlay = apply_overlay|default("rootfs") %}
-{% set use_download_headers = use_download_headers|default(false) %}
 {% set pre_boot_command = pre_boot_command|default(false) %}
 {% set pre_power_command = pre_power_command|default(false) %}
 {% set pre_os_command = pre_os_command|default(false) %}
 {% set auto_login = auto_login|default(true) %}
 {% set boot_method = boot_method|default("minimal") %}
+{% set use_download_headers = use_download_headers|default(false) %}
 
 {% set download_postprocess_required = download_postprocess_required|default(true) %}
 
@@ -26,7 +26,7 @@
       flasher:
         url: {{ ROOTFS_URL }}
 {% if use_download_headers %}
-        {{ DOWNLOAD_HEADER_NAME }}: {{ DOWNLOAD_HEADER_VALUE }}
+        {% include PROJECT+"include/auth-header.jinja2" %}
 {% endif %}
 {% if download_postprocess_required == true %}
     postprocess:
