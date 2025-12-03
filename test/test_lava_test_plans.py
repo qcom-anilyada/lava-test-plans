@@ -42,7 +42,11 @@ meta_qcom_devices = [
     for d in glob.glob("lava_test_plans/projects/meta-qcom/devices/*")
 ]
 assert len(meta_qcom_devices) > 0
-meta_qcom_testplans = ["meta-qcom/poky-altcfg", "meta-qcom/qcom-distro"]
+meta_qcom_testplans = [
+    "meta-qcom/poky-altcfg/boot",
+    "meta-qcom/qcom-distro/boot",
+    "meta-qcom/qcom-distro/pre-merge",
+]
 assert len(meta_qcom_testplans) > 0
 meta_qcom_variable_input_file = "projects/meta-qcom/variables.yaml"
 tests = []
