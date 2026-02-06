@@ -1,0 +1,1 @@
+{% extends "devices/qcs8300-ride-sx" %}
