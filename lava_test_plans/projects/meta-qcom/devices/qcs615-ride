@@ -1,7 +1,7 @@
 {% extends "devices/qcs615-ride" %}
 
 {# Device-specific test exclusions for meta-qcom project #}
-{% set EXCLUDED_TESTS = ['fastrpc_test', 'DSP_AudioPD', 'AudioRecord', 'AudioPlayback', 'adsp_remoteproc'] %}
+{% set EXCLUDED_TESTS = ['DSP_AudioPD', 'AudioRecord', 'AudioPlayback', 'adsp_remoteproc'] %}
 
 {# Exclude unsupported testplan for this device #}
 {% set EXCLUDED_TESTPLANS = ['pre-merge-camera.yaml', 'pre-merge-bt.yaml', 'pre-merge-audio.yaml'] %}
