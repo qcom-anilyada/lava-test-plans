@@ -1,0 +1,15 @@
+{% extends "include/qdl.jinja2" %}
+
+{% block deploy_target %}
+{{ super() }}
+{% endblock deploy_target %}
+
+{% block metadata %}
+metadata:
+  path: projects/meta-qcom-3rdparty/
+{% include PROJECT+"include/meta-qcom-3rdparty-metadata.jinja2" %}
+{% endblock metadata %}
+
+{% block context %}
+  test_character_delay: 10
+{% endblock context %}
