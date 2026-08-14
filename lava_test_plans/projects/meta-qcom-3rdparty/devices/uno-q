@@ -1,0 +1,10 @@
+{% extends "devices/qrb2210-arduino-imola" %}
+
+{# The image hostname is the Yocto MACHINE name, uno-q, and not the board
+   name the LAVA device type is named after. #}
+{% set BOOT_OS_PROMPT = "root@uno-q" %}
+
+{# The flashing parameters inherited from the base device match the layout
+   meta-qcom-3rdparty builds for this board: the qrb2210-unoq eMMC partition
+   config uses a single physical partition, so ptool emits one
+   rawprogram0.xml / patch0.xml pair, flashed in a single eMMC stage. #}

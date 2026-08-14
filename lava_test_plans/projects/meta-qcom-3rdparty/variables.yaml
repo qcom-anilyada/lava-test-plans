@@ -1,0 +1,16 @@
+"PROJECT_NAME": "test"
+"PROJECT": "projects/meta-qcom-3rdparty/"
+"LAVA_JOB_PRIORITY": "99"
+"BUILD_NUMBER": "123"
+# qcomflash deployment variables
+"IMAGE_FILE_NAME": "core-image-base-test.rootfs.qcomflash.tar.gz"
+"ROOTFS_URL": "variable-value"
+"ROOTFS_URL_COMP": "gz"
+"BUILD_DOWNLOAD_URL": "variable-value"
+"BUILD_URL": "https://some-url"
+"AUTH_HEADER_NAME": "QLIAuthorization"
+"AUTH_HEADER_TOKEN": "Q_QLI_S3_TOKEN"
+"DEPLOY_OS": "variable-value"
+# BOOT_OS_PROMPT is deliberately not set here: each device sets it to
+# root@<machine>, since the image hostname is the Yocto MACHINE name.
+"TEST_DEFINITIONS_REPOSITORY": "https://github.com/qualcomm-linux/qcom-linux-testkit/"
